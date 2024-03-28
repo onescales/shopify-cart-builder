@@ -13,8 +13,8 @@ For a visual overview and full details, see our article at COMING SOON and our y
 4. Create New Page (for example - Shopify Cart Builder) and Select "theme template" "Cart Builder"
 5. Visit "Cart Builder" page and use the form to get a url of your cart
 - Checkbox any products you want to add to cart and specify the quantity. Note you will need to select at least 1 product for the url builder to work.
-- Select "send visitor to" either cart or checkout page
-- Specify discount code if you want to add a coupon code
+- Select "Send visitor to" either cart or checkout page
+- Specify "Discount Code" if you want to add a coupon code
 - Click on "Build URL".
 - Grab either the QR code or the url via copy and provide to your customers.
 6. Start Using It. Enjoy!
@@ -23,6 +23,7 @@ For a visual overview and full details, see our article at COMING SOON and our y
 - Currently limited to 1000 products. If you have more than 1000 products in your catalog, you will need to customize code on your end.
 - Note that the above instructions are to create a new page and add liquid code. These instructions will create a public live page which most of you probably don't want to showcase to the world so you will have to add a password to it or use the liquid in this repo to do it in your own protected way.
 - QR Code generated is using google charts api.
+- If you add a Discount code that is wrong, the url will fail when you try it.
 - All code and instructions are as is. By reading this repository, readme or any code, you acknowledge that you are solely responsible for your own doings.
 
 Hope you liked this!
