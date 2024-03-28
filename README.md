@@ -16,7 +16,7 @@ For a visual overview and full details, see our article at COMING SOON and our y
 - Select "Send visitor to" either cart or checkout page
 - Specify "Discount Code" if you want to add a coupon code
 - Click on "Build URL".
-- Grab either the QR code or the url via copy and provide to your customers.
+- Grab either the QR code or the url via copy and provide to your customers. Note you can right click and "save as image" the qr code to use later.
 6. Start Using It. Enjoy!
 
 # Additional Notes
