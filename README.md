@@ -9,7 +9,7 @@ For a visual overview and full details, see our article at COMING SOON and our y
 
 1. Login to Shopify Backend
 2. Customize your theme and add a new "page template" called "Cart Builder" based on "Default Page".
-3. In this "Cart Builder" page template add a new section called "Liquid" and copy the code from https://github.com/onescales/shopify-cart-builder/blob/main/shopify-cart-builder.liquid
+3. In this "Cart Builder" page template add a new section called "Custom Liquid" and copy the code from https://github.com/onescales/shopify-cart-builder/blob/main/shopify-cart-builder.liquid
 4. Create New Page (for example - Shopify Cart Builder) and Select "theme template" "Cart Builder"
 5. Visit "Cart Builder" page and use the form to get a url of your cart
 - Checkbox any products you want to add to cart and specify the quantity. Note you will need to select at least 1 for the url builder to work.
