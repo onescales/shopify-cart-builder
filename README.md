@@ -14,7 +14,7 @@ For a visual overview and full details, see our article at COMING SOON and our y
 5. Visit "Cart Builder" page and use the form to get a url of your cart
 - Checkbox any products you want to add to cart and specify the quantity. Note you will need to select at least 1 product for the url builder to work.
 - Select "Send visitor to" either cart or checkout page
-- Specify "Discount Code" if you want to add a coupon code
+- Specify "Discount Code" if you want to add a coupon code. Discount code is optional.
 - Click on "Build URL".
 - Grab either the QR code or the url via copy and provide to your customers. Note you can right click and "save as image" the qr code to use later.
 6. Start Using It. Enjoy!
