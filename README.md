@@ -3,7 +3,7 @@ Simple form to Let you build a cart for you customer to provide them a special u
 
 This tutorial code requires a little bit of copy and paste in your Shopify backend to make it work but should take about 5 minutes no more.
 
-For a visual overview and full details, see our article at COMING SOON and our youtube video at COMING SOON
+For a visual overview and full details, see our article at https://onescales.com/blogs/main/shopify-pre-loaded-cart and our youtube video at https://www.youtube.com/watch?v=3X33Iwu4PjE
 
 # Steps
 
