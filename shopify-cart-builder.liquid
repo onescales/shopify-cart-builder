@@ -16,44 +16,58 @@
     th {
       background-color: #f2f2f2;
     }
-    .quantity-input {
-      width: 60px;
-    }
   </style>
 </head>
 <body>
 
-<form id="urlBuilderForm">
+<form id="cartForm">
   <table>
     <thead>
       <tr>
         <th>Select</th>
+        <th>Image</th> <!-- Image Column -->
         <th>Name</th>
+        <th>Price</th> <!-- Price Column -->
         <th>Variant ID</th>
         <th>Quantity</th>
       </tr>
     </thead>
     <tbody>
       {% for product in collections.all.products %}
-        {% for variant in product.variants %}
+        {% if product.variants.size > 0 %}
+          {% for variant in product.variants %}
+            <tr>
+              <td><input type="checkbox" name="variant" value="{{ variant.id }}"></td>
+              <td><img src="{{ variant.image | default: product.featured_image | img_url: 'medium' }}" loading="lazy" width="100" height="100"></td>
+              <td>{{ product.title }} - {{ variant.title }}</td>
+              <td>${{ variant.price | money_without_trailing_zeros }}</td>
+              <td>{{ variant.id }}</td>
+              <td><input type="number" name="quantity_{{ variant.id }}" value="1"></td>
+            </tr>
+          {% endfor %}
+        {% else %}
           <tr>
-            <td><input type="checkbox" name="variant" value="{{ variant.id }}"></td>
-            <td>
-              {{ product.title }}
-              {% if product.variants.size > 1 and variant.title != 'Default Title' %}
-                - {{ variant.title }}
-              {% endif %}
-            </td>
-            <td>{{ variant.id }}</td>
-            <td><input type="number" name="quantity_{{ variant.id }}" value="1" min="1" class="quantity-input"></td>
+            <td><input type="checkbox" name="variant" value="{{ product.id }}"></td>
+            <td><img src="{{ product.featured_image | img_url: 'medium' }}" loading="lazy" width="100" height="100"></td>
+            <td>{{ product.title }}</td>
+            <td>${{ product.price | money_without_trailing_zeros }}</td>
+            <td>N/A</td>
+            <td><input type="number" name="quantity_{{ product.id }}" value="1"></td>
           </tr>
-        {% endfor %}
+        {% endif %}
       {% endfor %}
     </tbody>
   </table>
-  
+</form>
+
+</body>
+</html>
+
+
+
+
   <label for="sendVisitorTo">Send visitor to:</label>
-  <select id="sendVisitorTo" name="sendVisitorTo">
+  <select id="sendVisitoTo" name="sendVisitorTo">
     <option value="cart">Cart</option>
     <option value="checkout">Checkout</option>
   </select><br>
@@ -108,7 +122,3 @@
     document.getElementById('qrCodeImage').style.display = 'block';
   }
 </script>
-
-</body>
-</html>
-
