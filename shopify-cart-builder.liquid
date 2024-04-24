@@ -58,16 +58,8 @@
       {% endfor %}
     </tbody>
   </table>
-</form>
-
-</body>
-</html>
-
-
-
-
   <label for="sendVisitorTo">Send visitor to:</label>
-  <select id="sendVisitoTo" name="sendVisitorTo">
+  <select id="sendVisitorTo" name="sendVisitorTo">
     <option value="cart">Cart</option>
     <option value="checkout">Checkout</option>
   </select><br>
@@ -86,39 +78,60 @@
 
 <script>
   function buildUrl() {
+    console.log('Checking input elements...');
+
     var variants = document.querySelectorAll('input[name="variant"]:checked');
+    console.log('Selected Variants:', variants);
+
     var baseUrl = "https://" + "{{ shop.permanent_domain }}/cart";
     var cartItems = [];
 
     variants.forEach(function(variant) {
-      var quantity = document.querySelector('input[name="quantity_' + variant.value + '"]').value;
+      console.log('Variant ID:', variant.value);
+      var quantityInput = document.querySelector('input[name="quantity_' + variant.value + '"]');
+      console.log('Quantity Input for Variant ' + variant.value + ':', quantityInput);
+
+      var quantity = quantityInput.value;
       cartItems.push(variant.value + ':' + quantity);
     });
+
+    console.log('Cart Items:', cartItems);
 
     var url = baseUrl + (cartItems.length > 0 ? '/' + cartItems.join(',') : '');
 
     var queryParams = [];
-    var discountCode = document.getElementById('discountCode').value.trim();
+    var discountCodeElement = document.getElementById('discountCode');
+    console.log('Discount Code Element:', discountCodeElement);
+    var discountCode = discountCodeElement ? discountCodeElement.value.trim() : '';
     if (discountCode) {
       queryParams.push('discount=' + encodeURIComponent(discountCode));
     }
 
-    var sendVisitorTo = document.getElementById('sendVisitorTo').value;
+    var sendVisitorToElement = document.getElementById('sendVisitorTo');
+    console.log('Send Visitor To Element:', sendVisitorToElement);
+    var sendVisitorTo = sendVisitorToElement ? sendVisitorToElement.value : "cart";
     if (sendVisitorTo === "cart") {
       queryParams.push('storefront=true');
     } else if (sendVisitorTo === "checkout") {
       queryParams.push('storefront=false');
     }
 
+    console.log('Query Params:', queryParams);
+
     if (queryParams.length > 0) {
       url += '?' + queryParams.join('&');
     }
 
     document.getElementById('generatedUrl').value = url;
+    console.log('Generated URL:', url);
 
-    // Generate QR code using Google Charts
     var qrImageUrl = 'https://chart.googleapis.com/chart?cht=qr&chl=' + encodeURIComponent(url) + '&chs=180x180&choe=UTF-8&chld=L|2';
-    document.getElementById('qrCodeImage').src = qrImageUrl;
-    document.getElementById('qrCodeImage').style.display = 'block';
+    var qrCodeImageElement = document.getElementById('qrCodeImage');
+    qrCodeImageElement.src = qrImageUrl;
+    qrCodeImageElement.style.display = 'block';
+    console.log('QR Code Image Element:', qrCodeImageElement);
   }
 </script>
+
+</body>
+</html>
