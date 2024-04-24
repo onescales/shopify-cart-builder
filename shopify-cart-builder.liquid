@@ -40,7 +40,7 @@
               <td><input type="checkbox" name="variant" value="{{ variant.id }}"></td>
               <td><img src="{{ variant.image | default: product.featured_image | img_url: 'medium' }}" loading="lazy" width="100" height="100"></td>
               <td>{{ product.title }} - {{ variant.title }}</td>
-              <td>${{ variant.price | money_without_trailing_zeros }}</td>
+              <td>{{ variant.price | money_without_trailing_zeros }}</td>
               <td>{{ variant.id }}</td>
               <td><input type="number" name="quantity_{{ variant.id }}" value="1"></td>
             </tr>
@@ -50,7 +50,7 @@
             <td><input type="checkbox" name="variant" value="{{ product.id }}"></td>
             <td><img src="{{ product.featured_image | img_url: 'medium' }}" loading="lazy" width="100" height="100"></td>
             <td>{{ product.title }}</td>
-            <td>${{ product.price | money_without_trailing_zeros }}</td>
+            <td>{{ product.price | money_without_trailing_zeros }}</td>
             <td>N/A</td>
             <td><input type="number" name="quantity_{{ product.id }}" value="1"></td>
           </tr>
