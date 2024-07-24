@@ -33,6 +33,7 @@
       </tr>
     </thead>
     <tbody>
+      {% paginate collections.all.products by 1000 %}
       {% for product in collections.all.products %}
         {% if product.variants.size > 0 %}
           {% for variant in product.variants %}
@@ -56,6 +57,7 @@
           </tr>
         {% endif %}
       {% endfor %}
+      {% endpaginate %}
     </tbody>
   </table>
   <label for="sendVisitorTo">Send visitor to:</label>
