@@ -23,7 +23,7 @@ For a visual overview and full details, see our article at https://onescales.com
 - Currently limited to 1000 products. If you have more than 1000 products in your catalog, you will need to customize code on your end.
 - If customer had an existing cart already, this url will replace it.
 - Note that the above instructions are to create a new page and add liquid code. These instructions will create a public live page which most of you probably don't want to showcase to the world so you will have to add a password to it or use the liquid in this repo to do it in your own protected way. You can also make visibility "hidden" and use it as a logged in admin by clicking on view page button.
-- QR Code generated is using google charts api.
+- QR Code generated is using quickchart.io
 - If you add a Discount code that is wrong, the url will fail when you try it.
 - This form is an easy tool to use based on Shopify's Cart Permalink - https://help.shopify.com/en/manual/products/details/cart-permalink
 - All code and instructions are as is. By reading this repository, readme or any code, you acknowledge that you are solely responsible for your own doings.
