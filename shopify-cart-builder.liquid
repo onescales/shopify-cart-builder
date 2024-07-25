@@ -85,7 +85,7 @@
     var variants = document.querySelectorAll('input[name="variant"]:checked');
     console.log('Selected Variants:', variants);
 
-    var baseUrl = "https://" + "{{ shop.permanent_domain }}/cart";
+    var baseUrl = "https://" + "{{ shop.domain }}/cart";
     var cartItems = [];
 
     variants.forEach(function(variant) {
@@ -127,7 +127,7 @@
     document.getElementById('generatedUrl').value = url;
     console.log('Generated URL:', url);
 
-    var qrImageUrl = 'https://chart.googleapis.com/chart?cht=qr&chl=' + encodeURIComponent(url) + '&chs=180x180&choe=UTF-8&chld=L|2';
+    var qrImageUrl = 'https://quickchart.io/chart?cht=qr&chl=' + encodeURIComponent(url) + '&chs=180x180&choe=UTF-8&chld=L|2';
     var qrCodeImageElement = document.getElementById('qrCodeImage');
     qrCodeImageElement.src = qrImageUrl;
     qrCodeImageElement.style.display = 'block';
