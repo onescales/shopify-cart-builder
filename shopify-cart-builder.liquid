@@ -74,6 +74,8 @@
 
 <p>Generated URL:</p>
 <textarea id="generatedUrl" rows="4" cols="50" readonly></textarea>
+<button type="button" onclick="navigator.clipboard.writeText(document.getElementById('generatedUrl').value).then(() => alert('URL copied to clipboard!')).catch(err => console.error('Failed to copy:', err));">Copy</button>
+
 
 <p>QR Code:</p>
 <img id="qrCodeImage" src="" alt="QR Code" style="display:none;">
